@@ -15,7 +15,7 @@ if [ ! -d cf-release ]; then
         if [ $CF_RELEASE_USE_HEAD != "no" ]; then
             ./update
             RBENV_VERSION=$ruby_version bundle install
-            RBENV_VERSION=$ruby_version bundle exec bosh -n create release --force
+            RBENV_VERSION=$ruby_version bundle exec bosh -n create release releases/$CF_RELEASE_MANIFEST_NUMBER.yml --force
         fi
     )
 fi
